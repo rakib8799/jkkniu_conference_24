@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 15, 2023 at 04:36 PM
+-- Generation Time: Nov 29, 2023 at 08:55 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -39,7 +39,7 @@ CREATE TABLE `admin_information` (
 --
 
 INSERT INTO `admin_information` (`admin_id`, `admin_name`, `admin_email`, `admin_password`) VALUES
-(1, 'Mehedi Khan Rakib', 'mkrakib007@gmail.com', '$2y$10$gwntBIpYSUdGXZa1VGxcd.LZ2ggWcvAOEXbGGMua04QQldupzM3Mu');
+(1, 'Mehedi Khan Rakib', 'mkrakib007@gmail.com', '$2y$10$9UgVCdI0.qLPhRjNIA8IGuhFgijsaF6HsplznThfD56vcDInaXP/y');
 
 -- --------------------------------------------------------
 
@@ -117,10 +117,10 @@ CREATE TABLE `important_dates` (
 
 INSERT INTO `important_dates` (`id`, `topic`, `date`) VALUES
 (1, 'Abstracts Submission', '20 November, 2023'),
-(2, 'Notice of Acceptance/ Rejection', '30 November, 2023'),
+(2, 'Acceptance/ Rejection', '30 November, 2023'),
 (3, 'Full Papers Submission', '31 December, 2023'),
 (4, 'Registration Starts', '25 December, 2023'),
-(5, 'Registration Ends', '15 January, 2024');
+(6, 'Registration Ends', '2024-01-15');
 
 -- --------------------------------------------------------
 
@@ -296,7 +296,7 @@ ALTER TABLE `committee`
 -- AUTO_INCREMENT for table `important_dates`
 --
 ALTER TABLE `important_dates`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `news_scroller`

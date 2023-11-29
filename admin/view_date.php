@@ -23,12 +23,12 @@
                         if (mysqli_num_rows($run_select_from_new_paper) > 0) {
                             while ($row = mysqli_fetch_assoc($run_select_from_new_paper)) {
                                 extract($row);
-                                // $date_format = date("d F, Y", strtotime($date));
+                                $date_format = date("d F, Y", strtotime($date));
                         ?>
                                 <tr>
                                     <td><?php echo $serial_no; ?></td>
                                     <td><?php echo $topic ?></td>
-                                    <td><?php echo $date ?></td>
+                                    <td><?php echo $date_format ?></td>
                                     <td>
                                         <a href="edit_date.php?date_id=<?php echo $id ?>" class="btn btn-primary">Edit</a>
                                     </td>

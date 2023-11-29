@@ -12,7 +12,7 @@
             while ($row = mysqli_fetch_assoc($run_select_from_new_paper)) {
                 extract($row);
             ?>
-                <div class="card" style="min-height: 20vh;">
+                <div class="card" style="min-height: 15vh;">
 
                     <div class="card-body">
                         <h5 class="card-title primary_color fw-bold fs-4" style="min-height: 10vh;">
@@ -28,7 +28,19 @@
                             }
                             ?>
                         </h5>
-                        <p class="card-text fw-bold fs-5"><?php echo $date; ?></p>
+                        <?php
+                        $date_format = date("Y-m-d", strtotime($date));
+                        $date_now = date("Y-m-d");
+                        if (strtotime($date_format) > strtotime($date_now)) {
+                        ?>
+                            <p class="card-text fw-bold fs-5"><?php echo $date; ?></p>
+                        <?php
+                        } else {
+                        ?>
+                            <p class="card-text fw-bold fs-5" style="font-size: 1.5rem;text-decoration:line-through;text-decoration-color:red;"><?php echo $date; ?></p>
+                        <?php
+                        }
+                        ?>
                     </div>
                 </div>
             <?php

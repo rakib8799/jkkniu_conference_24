@@ -4,8 +4,8 @@
 if (isset($_POST['add_date'])) {
     extract($_POST);
 
-    $date_format = date("d F, Y", strtotime($date));
-    $insert_sql = "INSERT INTO `important_dates`(`topic`,`date`) VALUES('$topic','$date_format')";
+    // $date_format = date("d F, Y", strtotime($date));
+    $insert_sql = "INSERT INTO `important_dates`(`topic`,`date`) VALUES('$topic','$date')";
     $run_insert_qry = mysqli_query($conn, $insert_sql);
     if ($run_insert_qry) {
         header("location: view_date.php");
