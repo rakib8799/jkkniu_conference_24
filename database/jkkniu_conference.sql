@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2023 at 08:55 PM
+-- Generation Time: Dec 14, 2023 at 07:08 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -197,14 +197,22 @@ CREATE TABLE `speakers` (
   `speaker_id` int(11) NOT NULL,
   `speaker_image` varchar(255) NOT NULL,
   `speaker_name` varchar(255) NOT NULL,
-  `speaker_email` varchar(255) NOT NULL,
   `speaker_country` varchar(255) NOT NULL,
   `speaker_university` varchar(255) NOT NULL,
   `speaker_designation` varchar(255) NOT NULL,
-  `speaker_topic` text NOT NULL,
+  `speaker_position` varchar(255) NOT NULL,
+  `speaker_topic` varchar(255) NOT NULL,
   `speaker_status` enum('0','1') NOT NULL DEFAULT '0',
   `created_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `speakers`
+--
+
+INSERT INTO `speakers` (`speaker_id`, `speaker_image`, `speaker_name`, `speaker_country`, `speaker_university`, `speaker_designation`, `speaker_position`, `speaker_topic`, `speaker_status`, `created_at`) VALUES
+(1, '657b237f5f591.jpeg', 'Pabitra Sarkar', 'India', 'Rabindra Bharati University, Kolkata', 'Professor Dr.', 'Former Vice Chancellor', 'Arts', '1', '2023-12-15 12:06:18'),
+(2, '657b357302d6d.jpeg', 'Tanyel B. Taysi', 'United States', 'International Foundation for Electoral System (IFES)', 'Dr.', 'Country Director - Bangladesh', 'Social Sciences', '1', '2023-12-15 12:06:24');
 
 --
 -- Indexes for dumped tables
@@ -320,7 +328,7 @@ ALTER TABLE `payment_form`
 -- AUTO_INCREMENT for table `speakers`
 --
 ALTER TABLE `speakers`
-  MODIFY `speaker_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `speaker_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
