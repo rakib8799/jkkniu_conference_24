@@ -22,7 +22,7 @@ if (isset($_POST['add_speaker'])) {
         } else {
             $timestamps = date("Y-m-d h:i:s", time());
 
-            $insert_sql = "INSERT INTO `speakers`(`speaker_name`,`speaker_university`,`speaker_designation`,`speaker_topic`,`speaker_country`,`speaker_email`,`speaker_image`,`speaker_status`,`created_at`) VALUES('$name','$university','$designation','$long_desc','$country','$email','$speaker_image_name','$speaker_status','$timestamps')";
+            $insert_sql = "INSERT INTO `speakers`(`speaker_name`,`speaker_university`,`speaker_designation`,`speaker_position`,`speaker_topic`,`speaker_country`,`speaker_image`,`speaker_status`,`created_at`) VALUES('$name','$university','$designation','$position','$topic','$country','$speaker_image_name','$speaker_status','$timestamps')";
             $run_insert_qry = mysqli_query($conn, $insert_sql);
             if ($run_insert_qry) {
                 move_uploaded_file($speaker_image_tmp_name, "../Images/speaker_images/" . $speaker_image_name);
@@ -55,8 +55,12 @@ if (isset($_POST['add_speaker'])) {
                 <input type="text" name="designation" id="designation" class="form-control" required>
             </div>
             <div class="mt-3">
-                <label for="long_desc">Topic</label>
-                <textarea name="long_desc" id="long_desc" required></textarea>
+                <label for="position">Position</label>
+                <input type="text" name="position" id="position" class="form-control" required>
+            </div>
+            <div class="mt-3">
+                <label for="topic">Speaking Topic</label>
+                <input type="text" name="topic" id="topic" class="form-control" required>
             </div>
             <div class="mt-3">
                 <label for="country">Country</label>
@@ -71,10 +75,10 @@ if (isset($_POST['add_speaker'])) {
                     ?>
                 </select>
             </div>
-            <div class="mt-3">
+            <!-- <div class="mt-3">
                 <label for="email">Email</label>
                 <input type="email" name="email" id="email" class="form-control" required>
-            </div>
+            </div> -->
             <div class="mt-3">
                 <label for="image">Image</label>
                 <input type="file" name="image" id="image" class="form-control" required>

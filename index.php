@@ -17,6 +17,11 @@
     <section class="HomepageSection mt-5" id="ChiefPatron">
         <?php include_once('chief_patron.php') ?>
     </section>
+
+    <section class="HomepageSection mt-5 text-center" id="Speakers">
+        <?php include_once('speakers.php') ?>
+    </section>
+
     <section class="HomepageSection mt-5" id="AboutEvent">
         <?php include_once('about_event.php') ?>
     </section>

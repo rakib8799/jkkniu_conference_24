@@ -19,7 +19,7 @@ if (isset($_POST['edit_speaker'])) {
             echo "<p class='text-danger text-bold text-center fs-5 mt-3'>File must of type jpg, jpeg or png</p>";
         } else {
             unlink('../Images/speaker_images/' . $current_image);
-            $update_sql = "UPDATE `speakers` SET `speaker_name`='$name',`speaker_university`='$university',`speaker_designation`='$designation',`speaker_topic`='$long_desc',`speaker_country`='$country',`speaker_email`='$email',`speaker_image`='$speaker_image_name',`speaker_status`='$speaker_status',`created_at`='$timestamps' WHERE speaker_id='$id'";
+            $update_sql = "UPDATE `speakers` SET `speaker_name`='$name',`speaker_university`='$university',`speaker_designation`='$designation',`speaker_position`='$position',`speaker_topic`='$topic',`speaker_country`='$country',`speaker_image`='$speaker_image_name',`speaker_status`='$speaker_status',`created_at`='$timestamps' WHERE speaker_id='$id'";
             $run_insert_qry = mysqli_query($conn, $update_sql);
             if ($run_insert_qry) {
                 move_uploaded_file($speaker_image_tmp_name, '../Images/speaker_images/' . $speaker_image_name);
@@ -30,7 +30,7 @@ if (isset($_POST['edit_speaker'])) {
             }
         }
     } else {
-        $update_sql = "UPDATE `speakers` SET `speaker_name`='$name',`speaker_university`='$university',`speaker_designation`='$designation',`speaker_topic`='$long_desc',`speaker_country`='$country',`speaker_email`='$email',`speaker_status`='$speaker_status',`created_at`='$timestamps' WHERE speaker_id='$id'";
+        $update_sql = "UPDATE `speakers` SET `speaker_name`='$name',`speaker_university`='$university',`speaker_designation`='$designation',`speaker_position`='$position',`speaker_topic`='$topic',`speaker_country`='$country',`speaker_status`='$speaker_status',`created_at`='$timestamps' WHERE speaker_id='$id'";
         $run_insert_qry = mysqli_query($conn, $update_sql);
         if ($run_insert_qry) {
             header("location: view_speaker_details.php");
@@ -68,14 +68,18 @@ if (isset($_GET['speaker_id'])) {
                         <label for="designation">Designation</label>
                         <input type="text" name="designation" id="designation" class="form-control" value="<?php echo $speaker_designation; ?>">
                     </div>
-                    <!-- <div class="mt-3">
-                        <label for="topic">Topic</label>
-                        <input type="text" name="topic" id="topic" class="form-control" value="<?php echo $speaker_topic; ?>">
-                    </div> -->
                     <div class="mt-3">
+                        <label for="position">Position</label>
+                        <input type="text" name="position" id="position" class="form-control" value="<?php echo $speaker_position; ?>">
+                    </div>
+                    <div class="mt-3">
+                        <label for="topic">Speaking Topic</label>
+                        <input type="text" name="topic" id="topic" class="form-control" value="<?php echo $speaker_topic; ?>">
+                    </div>
+                    <!-- <div class="mt-3">
                         <label for="long_desc">Topic</label>
                         <textarea name="long_desc" id="long_desc"><?php echo $speaker_topic ?></textarea>
-                    </div>
+                    </div> -->
                     <div class="mt-3">
                         <label for="country">Country</label>
                         <select class="form-select" id="country" name="country">
@@ -91,10 +95,10 @@ if (isset($_GET['speaker_id'])) {
                             ?>
                         </select>
                     </div>
-                    <div class="mt-3">
+                    <!-- <div class="mt-3">
                         <label for="email">Email</label>
                         <input type="email" name="email" id="email" class="form-control" value="<?php echo $speaker_email; ?>">
-                    </div>
+                    </div> -->
                     <div class="mt-3">
                         <label>Previous Image</label><br>
                         <img src="../Images/speaker_images/<?php echo $speaker_image ?>" width="50px" alt="speaker_image">

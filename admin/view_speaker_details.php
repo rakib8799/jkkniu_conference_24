@@ -12,9 +12,10 @@
                             <th>Name</th>
                             <th>University</th>
                             <th>Designation</th>
+                            <th>Position</th>
                             <th>Topic</th>
                             <th>Country</th>
-                            <th>Email</th>
+                            <!-- <th>Email</th> -->
                             <th>Image</th>
                             <th>Edit</th>
                             <th>Delete</th>
@@ -34,9 +35,10 @@
                                     <td><?php echo $speaker_name ?></td>
                                     <td><?php echo $speaker_university ?></td>
                                     <td><?php echo $speaker_designation ?></td>
+                                    <td><?php echo $speaker_position ?></td>
                                     <td><?php echo $speaker_topic ?></td>
                                     <td><?php echo $speaker_country ?></td>
-                                    <td><?php echo $speaker_email ?></td>
+                                    <!-- <td><?php echo $speaker_email ?></td> -->
                                     <td><img src="../Images/speaker_images/<?php echo $row['speaker_image'] ?>" width='50px' height='50px'></td>
                                     <td>
                                         <a href="edit_speaker_details.php?speaker_id=<?php echo $speaker_id ?>" class="btn btn-primary">Edit</a>
