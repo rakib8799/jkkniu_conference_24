@@ -14,7 +14,7 @@
             ?>
 
                 <div class="col-md-4">
-                    <div class="card speaker_hover our-team shadow p-3 rounded" style="height:100%;">
+                    <div class="card speaker_hover our-team shadow p-3 rounded package-item" style="height:100%;">
                         <div class="picture">
                             <img src="Images/speaker_images/<?php echo $speaker_image ?>" class="card-img-top" alt="speaker" style="height:45vh;">
                         </div>

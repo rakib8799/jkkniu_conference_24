@@ -33,9 +33,9 @@ if (isset($_POST['add_payment_form'])) {
                     echo "<p class='text-danger text-bold text-center fs-5 mt-3'>File must of type jpg, jpeg or png</p>";
                 } else {
                     $insert_sql = "INSERT INTO payment_form 
-                                    (paper_id,paper_title,track,author_name,author_address,author_country,author_category,email,phone_number,payment_form_image,captcha,created_at) 
+                                    (paper_id,paper_title,track,author_name,author_address,author_country,author_category,email,phone_number,payment_form_image,captcha) 
                                     VALUES
-                                    ('$paper_id','$paper_title','$track','$author_name','$author_address','$author_country','$author_category','$author_email','$phone','$payment_form_image_name','$captcha','$timestamps')";
+                                    ('$paper_id','$paper_title','$track','$author_name','$author_address','$author_country','$author_category','$author_email','$phone','$payment_form_image_name','$captcha')";
                     $run_insert_qry = mysqli_query($conn, $insert_sql);
 
                     if ($run_insert_qry) {

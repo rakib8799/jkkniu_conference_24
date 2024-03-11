@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="jkkniu 3rd conference, nazrul university 3rd conference, Jatiya Kabi Kazi Nazrul Islam University 3rd conference, jkkniu conference, nazrul university conference" />
     <meta name="description" content="This is JKKNIU ICHSS-2024 Conference Website where we are promoting Human Values, Creativity, Innovations and Prosperity to build Smart Generation for Smart Bangladesh" />
     <Link rel="icon" type="image/x-icon" href="Images/favicon.ico">
 

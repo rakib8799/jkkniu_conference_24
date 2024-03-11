@@ -15,7 +15,7 @@ function send_mail($receiver, $subject, $body)
 
     $mail = new PHPMailer(true);
     $sender_email = 'ichss2024.jkkniu@gmail.com';
-    $sender_pass = 'pzyzmmjyqdvvttpl';
+    $sender_pass = 'zhnwjshfvcxoeerk';
 
     //Enable verbose debug output
     $mail->SMTPDebug = 0; //SMTP::DEBUG_SERVER;
@@ -42,7 +42,7 @@ function send_mail($receiver, $subject, $body)
     $mail->Port = 587;
 
     //Recipients
-    $mail->setFrom($sender_email, 'ichss2024.jkkniu@gmail.com');
+    $mail->setFrom($sender_email, '3rd-ichss.jkkniu.edu.bd');
 
     //Add a recipient
     $mail->addAddress($receiver);

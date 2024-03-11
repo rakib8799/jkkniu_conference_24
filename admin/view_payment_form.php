@@ -9,21 +9,24 @@ if (isset($_POST['update'])) {
     $count = mysqli_num_rows($result);
     if ($count > 0) {
         $row = mysqli_fetch_assoc($result);
-        if ($row["payment_status"] == "1") {
-            $receiver = $row["email"];
-            $subject = "Conference Joining Invitation";
-            $body = '<p>Your payment form is successfully verified. You are invited to join our conference.. Thanks...</p>';
-            $send_mail = send_mail($receiver, $subject, $body);
-        }
+        // if ($row["payment_status"] == "1") {
+        //     $receiver = $row["email"];
+        //     $subject = "Conference Joining Invitation";
+        //     $body = '<p>Your payment form is successfully verified. You are invited to join our conference.. Thanks...</p>';
+        //     $send_mail = send_mail($receiver, $subject, $body);
+        // }
 
         $update_sql = "UPDATE `payment_form` SET `payment_status`='$payment_status' WHERE id='$status_id'";
         $run_update_qry = mysqli_query($conn, $update_sql);
         if ($run_update_qry) {
             if ($payment_status == "1") {
+                $receiver = $row["email"];
+                $subject = "Conference Joining Invitation";
+                $body = '<p>Your payment form is successfully verified. You are invited to join our conference.. Thanks...</p>';
+                $send_mail = send_mail($receiver, $subject, $body);
                 echo '<script>
-                    alert("A Mail is sent to your email address");
-                    window.location.href="view_payment_form.php";
-              </script>';
+                       alert("A Mail is sent to the verified user email address");
+                  </script>';
             } else {
                 echo '<script>
                         window.location.href="view_payment_form.php";

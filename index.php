@@ -14,6 +14,10 @@
     </section>
     <a style="cursor:pointer;" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"><img style="width: 2vw;" class="to-top position-fixed bottom-0 end-0" src="./Images/arrow-up.jpg"></a>
 
+    <section class="HomepageSection mt-5" id="ChiefGuest">
+        <?php include_once('chief_guest.php') ?>
+    </section>
+
     <section class="HomepageSection mt-5" id="ChiefPatron">
         <?php include_once('chief_patron.php') ?>
     </section>

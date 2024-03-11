@@ -29,12 +29,12 @@
                             ?>
                         </h5>
                         <?php
-                        $date_format = date("Y-m-d", strtotime($date));
+                        // $date_format = date("Y-m-d", strtotime($date));
                         $date_now = date("Y-m-d");
                         $date_f = date("d F, Y", strtotime($date));
-                        if (strtotime($date_format) > strtotime($date_now)) {
+                        if ($date_f < strtotime($date_now)) {
                         ?>
-                            <p class="card-text fw-bold fs-5"><?php echo $date_f; ?></p>
+                            <p class="card-text fw-bold fs-5"><?php echo $date; ?></p>
                         <?php
                         } else {
                         ?>
